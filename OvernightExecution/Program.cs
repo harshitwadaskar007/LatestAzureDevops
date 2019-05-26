@@ -21,6 +21,7 @@ namespace OvernightExecution
         [Test]
         public void FirstTest()
         {
+
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("headless");
