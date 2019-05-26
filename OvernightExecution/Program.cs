@@ -29,5 +29,17 @@ namespace OvernightExecution
             driver.Navigate().GoToUrl("https://www.google.com/");
             driver.Close();
         }
+
+        [Test]
+        public void SecondTest()
+        {
+
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("headless");
+            IWebDriver driver = new ChromeDriver(path, chromeOptions);
+            driver.Navigate().GoToUrl("https://www.google.com/");
+            driver.Close();
+        }
     }
 }
