@@ -3,7 +3,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +21,10 @@ namespace OvernightExecution
         [Test]
         public void FirstTest()
         {
-            IWebDriver driver = new ChromeDriver();
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("headless");
+            IWebDriver driver = new ChromeDriver(path,chromeOptions);
             driver.Navigate().GoToUrl("https://www.google.com/");
             driver.Close();
         }
