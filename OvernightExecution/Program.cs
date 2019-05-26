@@ -21,6 +21,7 @@ namespace OvernightExecution
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://www.google.com/");
+            driver.Close();
         }
     }
 }
